@@ -46,3 +46,9 @@ body {
 
 /* Smooth scrolling for in-page nav */
 html { scroll-behavior: smooth; }
+
+/* Edge fade mask utility for vertical walls */
+.edge-fade {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 12%, white 88%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, white 12%, white 88%, transparent 100%);
+}

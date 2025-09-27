@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import ParticleBackground from "@/components/ParticleBackground";
-import CustomCursor from "@/components/CustomCursor";
+import Navbar from "../components/Navbar";
+import ParticleBackground from "../components/ParticleBackground";
+import AnimatedGradient from "../components/AnimatedGradient";
+import CustomCursor from "../components/CustomCursor";
+import PageTransition from "../components/PageTransition";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,11 +27,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased bg-background text-foreground`}
       >
+        <AnimatedGradient />
         <ParticleBackground />
         <Navbar />
-        <main className="relative z-10">
-          {children}
-        </main>
+        <PageTransition>
+          <main className="relative z-10">
+            {children}
+          </main>
+        </PageTransition>
         <CustomCursor />
       </body>
     </html>
