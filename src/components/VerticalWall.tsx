@@ -40,8 +40,8 @@ export default function VerticalWall<T>({
   }, [items]);
 
   const duration = halfHeight > 0 ? halfHeight / speed : 20;
-  const from = 0;
-  const to = direction === "up" ? -halfHeight : halfHeight;
+  const start = direction === "down" ? -halfHeight : 0;
+  const end = direction === "down" ? 0 : -halfHeight;
 
   return (
     <div ref={containerRef} className={`relative overflow-hidden ${className ?? ""}`}>
@@ -55,10 +55,11 @@ export default function VerticalWall<T>({
         </div>
       ) : (
         <motion.div
-          key={halfHeight}
+          key={`${halfHeight}-${direction}`}
           className="will-change-transform"
           style={{ translateZ: 0 }}
-          animate={{ y: [from, to] }}
+          initial={{ y: start }}
+          animate={{ y: [start, end] }}
           transition={{ repeat: Infinity, ease: "linear", duration }}
         >
           <div data-half="1">
