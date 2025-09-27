@@ -6,12 +6,13 @@ export type ProjectItem = {
   id: string | number;
   imageSrc: string;
   title?: string;
+  role?: string;
+  timeline?: string;
 };
 
 export default function ProjectCard({ item, index = 0 }: { item: ProjectItem; index?: number }) {
   const aspectVariants = ["aspect-[4/3]", "aspect-[1/1]", "aspect-[3/4]"] as const;
   const aspect = aspectVariants[index % aspectVariants.length];
-  const initial = (item.title?.charAt(0) || "P").toUpperCase();
   return (
     <div className="rounded-2xl overflow-hidden shadow-xl bg-black/40 backdrop-blur-sm ring-1 ring-white/10 hover:ring-cyan-500/30 transition">
       <div className={`relative ${aspect}`}>
@@ -25,10 +26,19 @@ export default function ProjectCard({ item, index = 0 }: { item: ProjectItem; in
           aria-hidden={item.title ? undefined : true}
         />
       </div>
-      <div className="px-3 py-2 text-xs text-foreground/85 flex items-center gap-2">
-        <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent-purple/25 text-[10px]">{initial}</span>
-        <span className="truncate">{item.title ?? "Project"}</span>
-        <span aria-hidden className="ml-auto text-[10px] text-foreground/60">★★★★★</span>
+      <div className="px-3 pb-3 pt-2">
+        <div className="relative rounded-xl backdrop-blur-md bg-slate-900/40 ring-1 ring-cyan-500/10 p-3">
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-400/40 via-cyan-300/25 to-purple-500/40" />
+          <div className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent text-base md:text-lg font-semibold tracking-tight truncate">
+            {item.title ?? "Untitled Project"}
+          </div>
+          {item.role ? (
+            <div className="text-slate-400 text-sm truncate mt-1">{item.role}</div>
+          ) : null}
+          {item.timeline ? (
+            <div className="text-slate-500 text-xs mt-1">{item.timeline}</div>
+          ) : null}
+        </div>
       </div>
     </div>
   );
