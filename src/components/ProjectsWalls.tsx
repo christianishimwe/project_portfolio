@@ -58,7 +58,9 @@ export default function ProjectsWalls({
               direction={cfg.direction}
               speed={cfg.speed}
               className="p-4 h-[520px] md:h-[640px]"
-              renderItem={(item, i) => <ProjectCard item={item} index={i} />}
+              renderItem={({ item, index, onPause, onResume }) => (
+                <ProjectCard item={item} index={index} onPause={onPause} onResume={onResume} />
+              )}
             />
           </div>
         );
