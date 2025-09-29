@@ -20,6 +20,26 @@ export default function CustomCursor() {
       dot.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     };
 
+    const onMouseDown = () => {
+      ring.animate(
+        [
+          { transform: `${ring.style.transform} scale(1)`, boxShadow: "0 0 12px rgba(168,85,247,0.55)" },
+          { transform: `${ring.style.transform} scale(1.4)`, boxShadow: "0 0 18px rgba(34,211,238,0.55)" },
+          { transform: `${ring.style.transform} scale(1)` },
+        ],
+        { duration: 250, easing: "ease-out" }
+      );
+    };
+
+    const onHover = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const interactive = target.closest("a, button, input, textarea, select, [role='button']");
+      ring.style.borderColor = interactive ? "var(--accent-cyan)" : "rgba(168,85,247,0.7)";
+      ring.style.boxShadow = interactive ? "var(--shadow-neon-cyan)" : "var(--shadow-neon-purple)";
+      ring.style.width = interactive ? "44px" : "32px";
+      ring.style.height = interactive ? "44px" : "32px";
+    };
+
     const tick = () => {
       ringX += (x - ringX) * 0.15;
       ringY += (y - ringY) * 0.15;
@@ -27,8 +47,14 @@ export default function CustomCursor() {
       requestAnimationFrame(tick);
     };
     window.addEventListener("mousemove", onMove);
+    window.addEventListener("mousemove", onHover);
+    window.addEventListener("mousedown", onMouseDown);
     tick();
-    return () => window.removeEventListener("mousemove", onMove);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mousemove", onHover);
+      window.removeEventListener("mousedown", onMouseDown);
+    };
   }, []);
 
   return (
@@ -39,7 +65,7 @@ export default function CustomCursor() {
       />
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-50 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent-purple/70 glow-purple mix-blend-screen"
+        className="pointer-events-none fixed left-0 top-0 z-50 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent-purple/70 glow-purple mix-blend-screen transition-[width,height,border-color] duration-150"
       />
     </>
   );
