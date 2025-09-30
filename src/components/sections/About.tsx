@@ -7,10 +7,13 @@ export default function About() {
     <Section id="about" title="About">
       <div className="max-w-3xl text-foreground/85 space-y-4">
         <p>
-          I am a software engineer focused on crafting smooth, responsive interfaces and performant systems.
+          Hey, I am a Junior at the University of Pennsylvania, studying Computer Science, and concentrating in Artificial Intelligence. My primary interests lie in AI/ML and designing fast and scalable algorithms for complex systems.
         </p>
         <p>
-          My toolkit includes Next.js, React, TypeScript, and TailwindCSS. I enjoy building delightful, accessible user experiences with clean code and simple animations.
+          Beyond the classroom, I’ve developed strong backend engineering skills and enjoy building reliable, performant APIs. Last summer, I interned as a Software Engineer at Fulcrum GT, where I worked on AI-driven legal compliance system.
+        </p>
+        <p>
+          I build projects every day to improve my skills and learn new technologies. Checkout my top projects below.
         </p>
       </div>
     </Section>

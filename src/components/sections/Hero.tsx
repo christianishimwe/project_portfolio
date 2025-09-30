@@ -11,7 +11,7 @@ export default function Hero() {
             Christian Ishimwe
           </h1>
           <p className="mt-3 text-foreground/85 max-w-2xl">
-            I’m a software engineer who builds sleek, high‑performance web applications with a focus on clarity, accessibility, and smooth user experiences. I love type‑safe tooling, composable UI, and thoughtful micro‑interactions.
+            Prev Software Engineer @ Fulcrum GT | Junior at the University of Pennsylvania | Major in Computer Science | Concentration in AI
           </p>
           <div className="mt-5 flex gap-3">
             <a href="#projects" className="rounded-lg bg-accent-blue/90 hover:bg-accent-blue text-background px-5 py-2.5 transition-colors">View Projects</a>
