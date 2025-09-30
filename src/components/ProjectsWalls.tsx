@@ -46,7 +46,7 @@ export default function ProjectsWalls({
 
   return (
     <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${className ?? ""}`}>
-      {cols.map((items, idx) => {
+      {cols.map((items: ProjectItem[], idx: number) => {
         const cfg = walls[idx] ?? defaultWalls[idx] ?? defaultWalls[0];
         return (
           <div
@@ -59,7 +59,7 @@ export default function ProjectsWalls({
               speed={cfg.speed}
               className="p-4 h-[520px] md:h-[640px]"
               renderItem={({ item, index, onPause, onResume }) => (
-                <ProjectCard item={item as any} index={index} onPause={onPause} onResume={onResume} skills={(item as any).skills ?? undefined} />
+                <ProjectCard item={item} index={index} onPause={onPause} onResume={onResume} skills={(item as unknown as { skills?: string[] }).skills ?? undefined} />
               )}
             />
           </div>

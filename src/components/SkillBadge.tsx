@@ -4,8 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 
 export default function SkillBadge({ label, delay = 0 }: { label: string; delay?: number }) {
   const reduce = useReducedMotion();
-  const floatAnim = reduce
-    ? {}
+  const floatAnim: Record<string, unknown> | undefined = reduce
+    ? undefined
     : {
         y: [0, -3, 0],
         transition: { duration: 6, repeat: Infinity, ease: "easeInOut", delay },
@@ -18,7 +18,7 @@ export default function SkillBadge({ label, delay = 0 }: { label: string; delay?
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       initial={false}
-      animate={floatAnim as any}
+      animate={floatAnim}
     >
       <span className="relative">
         {label}
