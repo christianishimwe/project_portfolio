@@ -20,7 +20,9 @@ export default function Hero() {
         </div>
         <div className="md:col-span-2">
           <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-black/30 shadow-xl">
-            <div className="aspect-[4/5] md:aspect-[3/4] bg-gradient-to-br from-accent-purple/20 via-accent-cyan/15 to-accent-blue/20" />
+            <div className="relative aspect-[4/5] md:aspect-[3/4]">
+              <img src="/images/profile/profile.JPG" alt="Christian Ishimwe" className="absolute inset-0 h-full w-full object-cover" />
+            </div>
           </div>
         </div>
       </div>

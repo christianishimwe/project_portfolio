@@ -1,5 +1,5 @@
 import StatsCard from "./StatsCard";
-import { GraduationCap, Briefcase, Rocket, Globe } from "lucide-react";
+import { GraduationCap, Briefcase, Rocket, Github } from "lucide-react";
 
 export type StatItem = {
   icon: React.ReactNode;
@@ -11,9 +11,9 @@ export default function StatsRow({ items }: { items?: StatItem[] }) {
   const data: StatItem[] =
     items ?? [
       { icon: <GraduationCap className="w-7 h-7" />, label: "Certifications", value: "4" },
-      { icon: <Briefcase className="w-7 h-7" />, label: "Years Experience", value: "5+" },
-      { icon: <Rocket className="w-7 h-7" />, label: "Projects", value: "24" },
-      { icon: <Globe className="w-7 h-7" />, label: "Countries Served", value: "8" },
+      { icon: <Briefcase className="w-7 h-7" />, label: "Years Experience", value: "1" },
+      { icon: <Rocket className="w-7 h-7" />, label: "Projects", value: "4" },
+      { icon: <Github className="w-7 h-7" />, label: "GitHub Commits", value: "400+" },
     ];
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">

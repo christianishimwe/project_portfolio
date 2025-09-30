@@ -59,7 +59,7 @@ export default function ProjectsWalls({
               speed={cfg.speed}
               className="p-4 h-[520px] md:h-[640px]"
               renderItem={({ item, index, onPause, onResume }) => (
-                <ProjectCard item={item} index={index} onPause={onPause} onResume={onResume} />
+                <ProjectCard item={item as any} index={index} onPause={onPause} onResume={onResume} skills={(item as any).skills ?? undefined} />
               )}
             />
           </div>

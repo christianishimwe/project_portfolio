@@ -5,11 +5,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { href: "#hero", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-black/30 bg-black/20 border-b border-white/10">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-8 py-4">
-        <Link href="#hero" className="text-lg font-semibold tracking-wide">
+        <Link href="/" className="text-lg font-semibold tracking-wide">
           <span className="text-accent-cyan">Christian</span>
           <span className="text-accent-purple">.</span>
           <span className="text-accent-blue">I</span>
@@ -26,13 +26,13 @@ export default function Navbar() {
 
         <nav className="hidden md:flex items-center gap-6">
           {links.map((l) => (
-            <a
-              key={l.href}
+            <Link
+              key={l.label}
               href={l.href}
               className="text-sm text-foreground/80 hover:text-foreground transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -55,14 +55,14 @@ export default function Navbar() {
           >
             <ul className="px-6 py-4 space-y-3 bg-black/40">
               {links.map((l) => (
-                <li key={l.href}>
-                  <a
+                <li key={l.label}>
+                  <Link
                     href={l.href}
                     onClick={() => setOpen(false)}
                     className="block py-2 text-foreground/90 hover:text-foreground"
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
