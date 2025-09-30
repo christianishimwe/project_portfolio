@@ -36,8 +36,8 @@ export default function Hero() {
   );
 }
 
+import StatsRow from "@/components/StatsRow";
 function StatsRowPlaceholder() {
-  const StatsRow = require("@/components/StatsRow").default;
   return <StatsRow />;
 }
 

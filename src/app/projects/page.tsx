@@ -12,7 +12,7 @@ export default function ProjectsPage() {
 
   // Map external projects.ts to the shape expected by GalleryCard
   const mapped = useMemo(() => {
-    return projects.filter((p:any) => p.display !== false && p.display === true).map((p) => ({
+    return projects.filter((p) => (p as { display?: boolean }).display === true).map((p) => ({
       title: p.title,
       description: p.description,
       tags: Array.isArray(p.techStack) ? p.techStack : [],
