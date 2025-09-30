@@ -5,19 +5,16 @@ import Section from "@/components/Section";
 export default function About() {
   return (
     <Section id="about" title="About">
-      <div className="grid md:grid-cols-2 gap-8 items-start">
-        <div className="space-y-4 text-foreground/85">
-          <p>
-            I am a software engineer focused on crafting smooth, responsive interfaces and performant systems.
-          </p>
-          <p>
-            My toolkit includes Next.js, React, TypeScript, and TailwindCSS. I enjoy building delightful, accessible user experiences with clean code and simple animations.
-          </p>
-        </div>
-        <div className="rounded-xl border border-white/12 p-6 bg-black/30 glow-purple">
-          <div className="h-40 rounded-lg bg-gradient-to-br from-accent-purple/20 via-accent-cyan/20 to-accent-blue/20" />
-          <p className="mt-4 text-sm text-foreground/70">Placeholder image / profile box</p>
-        </div>
+      <div className="max-w-3xl text-foreground/85 space-y-4">
+        <p>
+          Hey, I am a Junior at the University of Pennsylvania, studying Computer Science, and concentrating in Artificial Intelligence. My primary interests lie in AI/ML and designing fast and scalable algorithms for complex systems.
+        </p>
+        <p>
+          Beyond the classroom, I’ve developed strong backend engineering skills and enjoy building reliable, performant APIs. Last summer, I interned as a Software Engineer at Fulcrum GT, where I worked on AI-driven legal compliance system.
+        </p>
+        <p>
+          I build projects every day to improve my skills and learn new technologies. Checkout my top projects below.
+        </p>
       </div>
     </Section>
   );

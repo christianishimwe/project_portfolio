@@ -52,3 +52,29 @@ html { scroll-behavior: smooth; }
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 12%, white 88%, transparent 100%);
           mask-image: linear-gradient(to bottom, transparent 0%, white 12%, white 88%, transparent 100%);
 }
+
+/* Subtle floating motion for skill badges */
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.badge-float { animation: badge-float 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-float { animation: none; }
+}
+
+/* Light sweep for skill badges on hover */
+.skill-shine { position: relative; overflow: hidden; }
+.skill-shine::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.08), transparent 70%);
+  transform: translateX(-140%);
+  transition: transform 600ms ease;
+  pointer-events: none;
+}
+.group\/skill:hover .skill-shine::after, .group\/skill:focus-within .skill-shine::after {
+  transform: translateX(140%);
+}
