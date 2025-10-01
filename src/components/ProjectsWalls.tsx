@@ -53,13 +53,14 @@ export default function ProjectsWalls({
             key={`wall-${idx}`}
             className="relative overflow-hidden edge-fade rounded-3xl bg-gradient-to-b from-slate-950/70 to-slate-900/70 ring-1 ring-white/10 min-h-[520px] md:min-h-[640px]"
           >
-            <VerticalWall
+            <VerticalWall<ProjectItem>
               items={items}
               direction={cfg.direction}
               speed={cfg.speed}
               className="p-4 h-[520px] md:h-[640px]"
               renderItem={({ item, index, onPause, onResume }) => (
-                <ProjectCard item={item} index={index} onPause={onPause} onResume={onResume} skills={(item as unknown as { skills?: string[] }).skills ?? undefined} />
+                <ProjectCard item={item} index={index} onPause={onPause} onResume={onResume} skills={item.skills}
+                />
               )}
             />
           </div>
