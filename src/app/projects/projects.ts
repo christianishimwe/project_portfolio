@@ -1,4 +1,16 @@
-export const projects = [{'title': 'Vera – AI Compliance Assistant', 'description': 'An AI-powered tool that matches internal policies with global regulations to identify compliance gaps.', 'role': 'Lead ML Engineer', 'techStack': ['Next.js', 'TailwindCSS', 'Node.js', 'Weaviate', 'LegalBERT', 'LangChain'], 'timeline': 'May 2025 – Aug 2025', 'category': ['AI/ML', 'Software Development'], 'image': '/images/projects/vera.png', 'link': '/projects/vera', 'display': true}, 
+export type ProjectSource = {
+  title: string;
+  description?: string;
+  role?: string;
+  techStack?: string[];
+  timeline?: string;
+  category?: string[];
+  image?: string;
+  link?: string;
+  display?: boolean;
+};
+
+export const projects: ProjectSource[] = [{'title': 'Vera – AI Compliance Assistant', 'description': 'An AI-powered tool that matches internal policies with global regulations to identify compliance gaps.', 'role': 'Lead ML Engineer', 'techStack': ['Next.js', 'TailwindCSS', 'Node.js', 'Weaviate', 'LegalBERT', 'LangChain'], 'timeline': 'May 2025 – Aug 2025', 'category': ['AI/ML', 'Software Development'], 'image': '/images/projects/vera.png', 'link': '/projects/vera', 'display': true}, 
 {'title': 'LaLa – Property Rental Platform', 'description': 'Founded and Led the development of an advanced platform for property rentals in Rwanda. Build with a mission to improve hospitality in Rwanda.', 'role': 'Founder & Full Stack Engineer', 'techStack': ['React', 'PostgreSQL', 'Express', 'TypeScript', 'TailwindCSS'], 'timeline': 'March 2025 – Present', 'category': ['Software Development'], 'image': '/images/projects/lala.png', 'link': '/projects/lala', 'display': true}, 
 {'title': 'Portfolio Website', 'description': 'A personal interactive portfolio site built with animations, hover interactions, and creative UI to showcase projects and experience.', 'role': 'UI/UX Designer & Frontend Developer', 'techStack': ['Next.js', 'Framer Motion', 'TailwindCSS', 'TypeScript'], 'timeline': 'September 2025 – Present', 'category': ['Software Development'], 'image': '/images/projects/portfolio.png', 'link': '/projects/portfolio', 'display': true}, 
 {'title': 'Investigator – U.S. Housing & Crime Analytics', 'description': 'Built a PostgreSQL analytics backend on 750K+ U.S. housing, crime, and employment records with materialized views and multi-column indexes; queries sped up from 300s to <2s.', 'role': 'Backend Engineer', 'techStack': ['Node.js', 'PostgreSQL', 'Express.js'], 'timeline': 'Mar 2025 – May 2025', 'category': ['Software Development'], 'image': '/images/projects/investigator.png', 'link': 'https://databases-five.vercel.app/', 'display': true}, 
