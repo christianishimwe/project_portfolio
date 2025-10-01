@@ -8,6 +8,7 @@ export type ProjectItem = {
   title?: string;
   role?: string;
   timeline?: string;
+  skills?: string[];
 };
 
 export default function ProjectCard({ item, index = 0, skills = ["Next.js", "React", "Tailwind", "PostgreSQL"], href = "#", onPause, onResume, }: { item: ProjectItem; index?: number; skills?: string[]; href?: string; onPause?: () => void; onResume?: () => void; }) {
