@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type TargetAndTransition } from "framer-motion";
 
 export default function SkillBadge({ label, delay = 0 }: { label: string; delay?: number }) {
   const reduce = useReducedMotion();
-  const floatAnim: Record<string, unknown> | undefined = reduce
+  const floatAnim: TargetAndTransition | undefined = reduce
     ? undefined
     : {
         y: [0, -3, 0],
