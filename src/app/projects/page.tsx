@@ -13,15 +13,15 @@ export default function ProjectsPage() {
   // Map external projects.ts to the shape expected by GalleryCard
   const mapped = useMemo(() => {
     return projects.filter((p) => (p as { display?: boolean }).display === true).map((p) => ({
-      title: p.title,
-      description: p.description,
+      title: p.title ?? "",
+      description: p.description ?? "",
       tags: Array.isArray(p.techStack) ? p.techStack : [],
       category: Array.isArray(p.category)
         ? (p.category.includes("AI/ML") ? "AI/ML" : "Software Development")
         : (p.category === "AI/ML" ? "AI/ML" : "Software Development"),
-      date: p.timeline,
-      image: p.image,
-      link: p.link,
+      date: p.timeline ?? "",
+      image: p.image ?? "",
+      link: p.link ?? "",
     }));
   }, []);
 
