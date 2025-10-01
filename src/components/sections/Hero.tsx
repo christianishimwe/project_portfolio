@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Hero() {
   return (
     <section id="hero" className="relative max-w-6xl mx-auto px-6 md:px-8 pt-12 md:pt-16 pb-6">
@@ -21,7 +22,14 @@ export default function Hero() {
         <div className="md:col-span-2">
           <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-black/30 shadow-xl">
             <div className="relative aspect-[4/5] md:aspect-[3/4]">
-              <img src="/images/profile/profile.JPG" alt="Christian Ishimwe" className="absolute inset-0 h-full w-full object-cover" />
+              <Image
+                src="/images/profile/profile.JPG"
+                alt="Christian Ishimwe"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="absolute inset-0 h-full w-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

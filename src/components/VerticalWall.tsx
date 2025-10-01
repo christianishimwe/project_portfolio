@@ -11,7 +11,6 @@ export type VerticalWallProps<T> = {
   speed?: number; // pixels per second
   direction?: Direction;
   className?: string;
-  wallId?: string;
 };
 
 export default function VerticalWall<T>({
@@ -20,13 +19,13 @@ export default function VerticalWall<T>({
   speed = 60,
   direction = "up",
   className,
-  wallId,
 }: VerticalWallProps<T>) {
   const reduce = useReducedMotion();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [halfHeight, setHalfHeight] = useState(0);
   const pausedRef = useRef(false);
 
+  // Duplicate list to enable seamless vertical wrap
   const list = useMemo(() => [...items, ...items], [items]);
 
   useEffect(() => {
